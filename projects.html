@@ -1,0 +1,87 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+
+<main>
+
+	<h2>Ongoing Projects</h2>
+
+	{% capture description %}
+		We are building tools to help engineers understand and debug neural networks, with a focus on recurrent models (e.g., RNNs, LSTMs). See out <a href="/assets/papers/sellam-sysML.pdf">SysML submission</a> for an overview. This is a collaboration with Kevin Lin and Eugene Wu (Columbia).
+	{% endcapture description %}
+	{% include project.html
+		title="Neural Debugging"
+		image="/assets/images/DNN_debug.png"
+		description=description
+	%}
+
+
+	{% capture description %}
+		We are building a system to generate user interfaces automatically by mining SQL query logs and navigational data.
+    	This is a collaboration with Haoci Zhang (Tsinghua) and Eugene Wu (Columbia). See our <a href="https://arxiv.org/abs/1712.00078">VLDB submission</a> for an overview.
+	{% endcapture description %}
+	{% include project.html
+		title="Precision Interfaces"
+		image="/assets/images/PI_UI.png"
+		description=description
+	%}
+
+
+
+	<h2>Past Projects</h2>
+
+    {% capture description %}
+    	The aim of my PhD was to develop <b>automatic advisors</b>, to help users explore and understand their databases.  These advisors could detect statistical patterns, and exploit them to recommend queries and visualizations. For instance, <a href='https://dl.acm.org/citation.cfm?id=2806538'>Claude [CIKM 2015]</a> uses feature selection and information theory to   recommend views. <a href="http://cidrdb.org/cidr2013/Papers/CIDR13_Paper94.pdf">Charles [CIDR 2015]</a>, then its successor <a href="http://ieeexplore.ieee.org/abstract/document/7374727/">Blaeu [TKDE 2015]</a> exploit cluster analysis and subspace search. Also, instead of well- structured databases, users may have to deal with text files, or even worse, tweets. <a href="https://link.springer.com/chapter/10.1007/978-3-319-19890-3_17">Raimond [ICWE 2015]</a> extracts and organizes quantitative data from social data.
+	{% endcapture description %}
+	{% include project.html
+		title="Automatic Advisors for Data Exploration"
+		image="/assets/images/cover_small.jpg"
+		large_img="True"
+		description=description
+	%}
+	<div>
+		 <p style="float: left; margin-right:1em;"> <img src="/assets/images/Rlogo.png" width="70"> </p>
+		 <p>
+		 	 Some of the the ideas in the thesis were implemented in a <b>R package</b> called <a href="http://github.com/tsellam/findviews">findviews</a>, available on CRAN. Check it out!
+ 		</p>
+	</div>
+
+
+	{% capture description %}
+		The aim of this project was to model search query logs and Twitter data to detect <b>experts</b> on social media. This project has been ongoing since my internship at Microsoft Research,
+        during summer of 2014 in Mountain View (CA). Then, I was under
+        supervised by Omar Alonso, at Bing.
+	{% endcapture description %}
+	{% include project.html
+		title="Social Data Analytics"
+		image="/assets/images/ProjectSocial.png"
+		description=description
+	%}
+
+
+	{% capture description %}
+		The aim of this project was to develop database and forecasting technology to analyze large
+            repositories of GPS data. This project was collaboration with <a href="https://www.tomtom.com/">TomTom</a>.
+	{% endcapture description %}
+	{% include project.html
+		title="Timetrails - Traffic Data Analysis"
+		image="/assets/images/ProjectGPS.png"
+		description=description
+	%}
+
+
+
+	{% capture description %}
+		<a href="http://monetdb.org/">MonetDB</a> is a very fast Open Source column-store.
+	{% endcapture description %}
+	{% include project.html
+		title="MonetDB"
+		image="/assets/images/ProjectMonet.png"
+		description=description
+	%}
+
+
+</main>
+

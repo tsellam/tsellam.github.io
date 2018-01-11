@@ -1,0 +1,11 @@
+<section>
+	<h4>{{ include.title }}</h4>
+	<div>
+	 <p style="float: right; margin-left:2em;">
+	 	<img src="{{ include.image }}"
+	 		 width="{% if include.large_img %} 180 {% else %} 160 {% endif %}">
+	 		</p>
+	 <p>{{ include.description }}</p>
+	</div>
+	<div style="clear: both;"></div>
+</section>

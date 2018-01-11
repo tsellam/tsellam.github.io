@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Experimenting with Blaeu</title>
+    <style type="text/css">
+        div.main-title {
+			text-align:center;
+        }
+        table {
+        	margin-left: auto;
+        	margin-right: auto;
+        	margin-top: 1em;
+        	margin-bottom: 1em;
+			border:1px solid black;
+			text-align:center;
+			border-collapse: collapse;
+		}
+		table.all-lines td{
+			border:1px solid black;
+			text-align:center;
+			border-collapse: collapse;
+		}
+		td {
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+		}
+
+		th {
+			border-bottom:1px solid black;
+		}
+
+		div.code {
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+
+    </style>
+</head>
+
+<body>
+
+	<div class="main-title">
+        <h1>Cluster-Driven Navigation of the Query Space<br/>Additional
+            Material</h1> <h3>Thibault Sellam - Martin Kersten</h3>
+	</div>
+
+    This page describes the experiments presented in the article
+    <i>Cluster-Driven Navigation of the Query Space</i>, under review for <a
+    href="http://www.computer.org/portal/web/tkde">IEEE TKDE</a>.
+
+
+     <h2>Screencast</h2>
+
+     <div style="text-align: center;
+         margin: 0 auto;
+         display: block;">
+        <iframe width="700" height="395"
+            src="https://www.youtube.com/embed/hmBFqBsLmcA" frameborder="0"
+            allowfullscreen></iframe>
+        </div>
+
+
+     <br/>Blaeu is currently being developped as a commercial product. This
+     screencast showcases an early prototype. The video may also be downloaded
+     <a
+     href="https://drive.google.com/open?id=0BzaVgtC5TwUWVjVVRDBLTzNGMmM">here</a>
+ (hosted by Google Drive).  <br/> The visualization used in the video is
+ different from that used in the paper  - the video uses trees, the paper uses
+ radial pie charts - but the underlying principles are exactly the same.
+
+
+    <h2>Use cases</h2>
+
+    The first use case is based on a database provided by US Bureau
+    Transportation Statistics, available <a
+    href="http://www.transtats.bts.gov/DatabaseInfo.asp?DB_ID=120">here</a>. We
+used the month of January 2010. The Hollywood dataset was curated by the
+Website <a href="http://www.informationisbeautifulawards.com/">Information is
+Beautiful Awards</a>. You may find a copy <a href="hollywood.tsv">here</a>.
+    
+
+	<h2>Experiments</h2>
+
+	<h3>Synthetic data</h3>
+
+		<h4>Data generator</h4>
+
+		Our generator operates in two steps. First, it creates subspaces by assigning each column to a group. Second, it generates the clusters for each groups. To do so, it draws samples from several multinomial Gaussian distributions.<br/>
+
+		We used the following parameters:
+		<table>
+		<tr>
+		  <th>Parameter</th>
+		  <th>Distribution</th> 
+		  <th>Value</th>
+		</tr>
+		<tr>
+		  <td>Tuples</td>
+		  <td>Constant</td>
+		  <td>20,000</td>
+		</tr><tr>
+		  <td>Columns</td> 
+		  <td>Constant</td>
+		  <td>40</td>
+		</tr><tr>
+		  <td>Columns per subspace</td>
+		  <td>Uniform</td>
+		  <td>[2,10]</td>
+		</tr><tr>
+		  <td>Clusters per subspace</td>
+		  <td>Constant</td>
+		  <td>5</td>
+		</tr><tr>
+		  <td>Centroid position</td>
+		  <td>Uniform</td>
+		  <td>[0,100]</td>	  
+		</tr><tr>
+		   <td>Cluster radius</td>
+		   <td>Uniform</td>
+		   <td>[2,10]</td>
+		</tr>
+		</table>
+
+
+		<h4>Algorithms</h4>
+
+        We inferred several parameters from the characteristics of the data.
+        The variable NCLU represents the number of clusters in each subspace,
+        NSUB the number of subspaces, NROWS and NCOLS the number of rows and
+        columns. We ran the experiment <i>CMI + SimpleMap</i> with two
+        different set of parameters, and reported the best results.
+
+		<table class="all-lines">
+		<tr>
+			<td>SimpleMap</td>
+			<td>Max. number of clusters</td>
+			<td>NCLU</td>
+		</tr>
+		<tr>
+			<td>MultiMap</td>
+			<td>Max. number of clusters</td>
+			<td>NCLU</td>
+		</tr>
+		<tr>
+			<td>LightMap</td>
+			<td>Max. number of clusters</td>
+			<td>NCLU</td>
+		</tr><tr>
+			<td rowspan=4>CMI + SimpleMap</td>
+			<td>Beam size</td>
+			<td>400</td>
+		</tr><tr>
+			<td>Alpha</td>
+			<td>1.0</td>
+		</tr><tr>
+			<td>Seeds</td>
+			<td>10</td>
+		</tr><tr>
+			<td>Num subspaces</td>
+			<td>NSUB</td>
+		</tr><tr>
+			<td>CMI + Simple Map (2)</td>
+			<td>Num subspaces</td>
+			<td>100</td>
+		</tr><tr>
+			<td rowspan=9>FIRES</td>
+			<td>Base DBSCAN eps.</td>
+			<td> 0.5</td>
+		</tr><tr>
+			<td>Base DBSCAN min pts.</td>
+			<td>NROWS/100</td>
+		</tr><tr>
+			<td>Pre. min percent</td>
+			<td>25.0</td>
+		</tr><tr>
+			<td>Graph split</td>
+			<td>0.66</td>
+		</tr><tr>
+			<td>Graph k</td>
+			<td>ceil(NCOLS / NSUB)</td>
+		</tr><tr>
+			<td>Graph mu</td>
+			<td>ceil(NCOLS / NSUB)</td>
+		</tr><tr>
+			<td>Graph min clu</td>
+			<td>1</td>
+		</tr><tr>
+			<td>Post DBSCAN eps.</td>
+			<td>0.5</td>
+		</tr><tr>
+			<td>Post DBSCAN min pts.</td>
+			<td>25</td>	
+		</tr><tr>
+			<td rowspan=2>PROCLUS</td>
+			<td>k</td>			
+			<td>NCLU * NSUB</td>			
+		</tr><tr>
+			<td>Dim</td>			
+			<td>NCOLS / NSUB</td>
+		</tr>
+		</table>
+
+	We ran each experiment five times and reported the average results. 
+
+	<h3>Real data</h3>
+    <h4>Data</h4>
+    All the datasets we used were made available by the <a
+        href=http://archive.ics.uci.edu/ml/>the UCI repository</a>. For
+        convenience, we gathered them in <a
+            href="https://drive.google.com/file/d/0BzaVgtC5TwUWN2tjV3p0ZWdRTWc/view?usp=sharing">this
+            archive</a> (mutant1) and <a
+        href="https://drive.google.com/file/d/0BzaVgtC5TwUWQTROMmRvM1pNdkk/view?usp=sharing">this
+    archive</a> (all the other sets).
+
+    <h4>Settings</h4>
+    With real-life datasets, we cannot calculate the best parameters a priori.
+    Therefore, we tried several combinations, and reported the best results.
+    The table below describes the settings we tried. For instance, we tested
+    10*10=100 combinations for PROCLUS. We did not change the other parameters.
+
+		<table class="all-lines">
+		<tr>
+			<td>SimpleMap</td>
+			<td>Max. number of clusters</td>
+			<td>2,3,5,8,13,21,34 </td>
+		</tr><tr>
+			<td>MultiMap</td>
+			<td>Max. number of clusters</td>
+			<td>2,3,5,8,13,21,34 </td>
+		</tr><tr>
+			<td>LightMap</td>
+			<td>Max. number of clusters</td>
+			<td>2,3,5,8,13,21,34 </td>
+		</tr><tr>
+			<td rowspan=2>CMI + MultiMap.</td>
+			<td>Num subspaces</td>
+			<td>2^i, i in [1,8] </td>
+		</tr><tr>
+			<td>Max. number of clusters</td>
+			<td>2,3,5,8,13,21,34 </td>
+		</tr><tr>
+			<td rowspan=2>CMI + SimpleMap.</td>
+			<td>Num subspaces</td>
+			<td>2^i, i in [1,8] </td>
+		</tr><tr>
+			<td>Max. number of clusters</td>
+			<td>2,3,5,8,13,21,34 </td>
+		</tr><tr>
+			<td rowspan=3>FIRES</td>
+			<td>Graph K</td>
+			<td>2*i, i in [1,5]</td>
+		</tr><tr>
+			<td>Graph Mu</td>
+			<td>2*i, i in [1,5]</td>
+		</tr><tr>
+			<td>Graph minclu</td>
+			<td>2^i, i in [0,2]</td>
+		</tr><tr>
+			<td rowspan=2>PROCLUS</td>
+			<td>k</td>			
+			<td>2^i, i in [1,10]</td>			
+		</tr><tr>
+			<td>Dim</td>			
+			<td>2^i, i in [1,10]</td>
+		</tr>
+		</table>
+
+    <h3>Sampling</h3>
+    The datasets used for the sampling experiments may be found <a
+        href="http://archive.ics.uci.edu/ml/machine-learning-databases/census1990-mld/">here</a>
+    and <a
+    href="http://archive.ics.uci.edu/ml/machine-learning-databases/00231/PAMAP2_Dataset.zip">here</a>.
+
+
+	<h2>Software</h2>
+        We used the implementations of FIRES and PROCLUS provided with the <a
+            href=http://dme.rwth-aachen.de/en/OpenSubspace>Open Subspace</a>
+            suite.<br/> You may find our implementation of SimpleMap,
+            MultiMap and LightMap <a
+                href="blaeu-algorithms.zip">here</a>.  These scripts require
+            <a href="http://cran.r-project.org/">R</a> to be installed,
+            with the packages cluster, dynamicTreeCut and rpart. On a Linux
+            machine, they may be called as follows:<br/>
+
+	<div class="code">
+	<code>
+		# First, compile the Information Theory functions <br/>
+		(cd lib && R CMD SHLIB info_theory.c )<br/><br/>
+
+		# SimpleMap <br/>
+		./SimpleMap.R data_file out_file number_clusters [sample_size]<br/><br/>
+		# MultiMap <br/>
+		./MultiMap.R  data_file out_file number_clusters [sample_size] <br/><br/>
+		# LightMap <br/>
+		./LightMap.R data_file out_file number_clusters
+	</code>
+	</div>
+
+        The folder lib contains a few primitives written in R and C (for the
+        functions related to entropy, mutual information, variation of
+        information). It should be stored in the same folder as the R scripts.
+        The input file should be a headless CSV file, with the separator ";".
+        We included an example in the archive. The output file contains the
+        subspace-clusters. Each entry has the following format:
+	<div class="code">
+	<code>
+        [binary column vector] [n items] [item indices]    
+	</code>
+	</div>
+    The <i>column vector</i> describes the subspace in which the cluster is
+relevant. The next field describes the number of items in the cluster. The
+third field describes the index of the tuples, starting at 0. For instance, the
+    following entry indicates a 6 tuples cluster, based on the second and third columns: 
+    <div class="code">
+	<code>
+        0 1 1 6 0 1 12 13 14 51
+	</code>
+	</div>
+	
+    This format was initiated by the <a href=http://dme.rwth-aachen.de/en/OpenSubspace>Open Subspace</a> project. It is compatible with <a href=http://dme.rwth-aachen.de/en/OpenSubspace/E4SC>E4SC</a>.
+	
+	<HR>
+	<SMALL>
+	<EM>
+	<A href="http://www.cwi.nl/disclaimer.html"> CWI DISCLAIMER</A>
+	</EM>
+	</SMALL>
+	<HR>
+
+</body>
+
+
+</html>

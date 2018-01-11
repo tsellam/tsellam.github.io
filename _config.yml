@@ -1,0 +1,35 @@
+title: Thibault Sellam
+email: thibault.sellam@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+    Pronunciation: "Tee-Bo" - it's French!
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  tsellam
+navigation_footer:
+
+social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
+  Email: mailto:thibault.sellam@gmail.com
+  GitHub: https://github.com/tsellam
+  LinkedIn: https://www.linkedin.com/in/thibault-sellam-443198a/
+
+sass:
+  style: compressed # Style compression
+
+# Build settings
+markdown: kramdown
+theme: alembic-jekyll-theme
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+remote_theme: daviddarnes/alembic
+
+# 8. Site navigation
+navigation_header:
+  Home: /
+  Projects: /projects/
+  Publications: /publications/
+  Software and Other: /software/
+
+navigation_footer:
+  Thibault Sellam
+

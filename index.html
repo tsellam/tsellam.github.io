@@ -1,0 +1,36 @@
+---
+layout: page
+---
+
+<main>
+
+  <section>
+      <h1>{{ site.title }}</h1>
+      <h3>{{ site.description }}</h3>
+  </section>
+
+  <section>
+  <p style="float: right; margin-left:2em;">
+    <img src="/assets/images/mainpic.jpg" alt="Portrait" width="180">
+ </p>
+
+	<p>
+   I am a postdoc at the <a href="https://cudbg.github.io/lab/">WuLab</a>, within the <a href="http://datascience.columbia.edu/">Data Science Institute</a> of <a href="http://www.columbia.edu/">Columbia University</a>, in New York. I am interested in data exploration, data mining, human-in-the-loop machine learning and more generally anything at the intersection of data management and AI.
+    </p>
+
+</section>
+
+<section>
+	<p>
+    {% for link in site.social_links %}
+      {% assign id = link[0] | downcase %}
+       <a class="social-media-link" href="{{ link[1] }}">
+        {% include icon.html id=id title=id %}
+      </a>
+  {% endfor %}
+	</p>
+
+</section>
+
+
+</main>

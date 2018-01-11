@@ -1,0 +1,7 @@
+<p class="biblio">
+<em>{{ include.authors }}</em> <br/>
+<b>{{ include.title }}</b>, {{ include.venue }}
+{% if include.link %}
+ [<a href="{{include.link}}">pdf</a>]
+{% endif %}
+</p>

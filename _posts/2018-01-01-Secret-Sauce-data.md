@@ -4,7 +4,7 @@ layout: post
 feature_image: "/assets/secret-sauce/Minimoog_panel.jpg"
 ---
 
-The aim of Secret Sauce is to automatically reverse engineer guitar and synth sounds, and thus answer the question <i><q>Wow, how did they make that sound?!</q></i>.
+The aim of the Secret Sauce project is to automatically reverse engineer guitar and synth sounds, and thus answer the question <i><q>Wow, how did they make that sound?!</q></i>.
 This post presents the task, the datasets, and makes them available for whoever would like to try.
 
 <!-- more -->
@@ -13,7 +13,7 @@ This post presents the task, the datasets, and makes them available for whoever 
 
 Whether it's a <a href="https://www.youtube.com/watch?v=fWm3mm6CdIQ">light echo</a> on a rockabilly guitar, a <a href="https://www.youtube.com/watch?v=4w8pbGz7E8c">thick pad</a> on a prog rock record or a <a href="https://www.youtube.com/watch?v=meXPbvp3ldg">heavy sub</a> on a hip hop track, effects and synthesizers have become a crucial aspect of modern music. And yet, as <a href="https://www.soundonsound.com/forum/viewforum.php?f=23">Web forums</a> testify, turning ideas into sounds is a difficult craft, which takes years to master.
 
-The aim of the Secret Sauce project is to make it easier for musicians to (re)create sounds. We are developing statistical models to reverse engineer synthesizer patches and guitar effects: give the model a reference sound, and it will tell you how to reproduce it.
+The aim of the Secret Sauce project is to make it easier for musicians to create sounds. We are developing statistical models to reverse engineer synthesizer patches and guitar effects: give the model a reference sound, and it will tell you how to reproduce it.
 
 To this end, we are releasing three datasets, based on three instruments: a <a href="https://www.native-instruments.com/en/products/komplete/guitar/guitar-rig-5-player/download/">guitar with 5 effects</a>, a <a href="https://tal-software.com/products/tal-noisemaker">substractive synth plug-in</a> and a <a href="https://www.moogmusic.com/products/phattys/sub-phatty">Moog Phatty</a>. For each instrument, we provide 10,000 sound samples, as well as the settings used to produce the sounds. The inference task is to guess the settings from the sounds.
 

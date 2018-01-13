@@ -65,4 +65,4 @@ Finally, in the long term, we can imagine reversing the process, and <i>infer so
 The Secret Sauce project is in the lineage of <a href="http://www.yeeking.net/matthew_yee-king_dphil_thesis_2011.pdf">Yee King's pioneering thesis</a> (2011), which showed that it was possible to program substractive and additive synthesizers with feed-forward nets and genetic algorithms to imitate sounds. We hope to reproduce those results, generalize them to other settings and try many other models. If you know of any other relevant reference, please reach out!
 
 ### Acknowledgements
-Thanks to <a href="https://bonvoyageorganisation.com/">Adrien Durand</a> for the ideas, and many thanks Léo Sellam for the synthesizer, the recording, the advise and the food.
+Many thanks to Léo Sellam for the synthesizer, the recording, the advise and the food. I also thank <a href="https://bonvoyageorganisation.com/">Adrien Durand</a> for his insights.

@@ -1,7 +1,7 @@
 title: Thibault Sellam
 email: thibault.sellam@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-    Pronunciation: "Tee-Bo" - it's French!
+    Thibault Sellam's homepage
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  tsellam
@@ -29,8 +29,8 @@ navigation_header:
   Home: /
   Projects: /projects/
   Publications: /publications/
+  Blog: /articles/
   Other: /software/
-  Articles: /articles/
 
 navigation_footer:
   Thibault Sellam

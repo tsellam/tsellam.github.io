@@ -3,8 +3,7 @@ title: Secret Sauce, First Experiments
 layout: post
 feature_image: "/assets/secret-sauce/effects_wide.jpg"
 ---
-This post presents early results for the Secret Sauce project, presented in a [previous post](http://sellam.me/2018/01/01/Secret-Sauce-data.html).
-We show that it is possible to predict guitar effects accurately with high level audio features and recurrent neural nets, but predicting synthesizer patches is much more challenging.
+This post presents early results for the Secret Sauce project. We show that it is possible to predict guitar effects accurately with high level audio features and recurrent neural nets, but predicting synthesizer patches is much more challenging.
 
 <!-- more -->
 

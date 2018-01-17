@@ -9,11 +9,20 @@ permalink: /projects/
 	<h2>Ongoing Projects</h2>
 
 	{% capture description %}
-		We are building tools to help engineers understand and debug neural networks, with a focus on recurrent models (e.g., RNNs, LSTMs). See out <a href="/assets/papers/sellam-sysML.pdf">SysML submission</a> for an overview. This is a collaboration with Kevin Lin, Ian Huang and Eugene Wu (Columbia).
+		We are building tools to help engineers understand and debug neural networks, with a focus on recurrent models (e.g., RNNs, LSTMs). See our <a href="/assets/papers/sellam-sysML.pdf">SysML submission</a> for an overview. This is a collaboration with Kevin Lin, Ian Huang and Eugene Wu (Columbia).
 	{% endcapture description %}
 	{% include project.html
 		title="Neural Debugging"
 		image="/assets/images/DNN_debug.png"
+		description=description
+	%}
+
+	{% capture description %}
+		We are building statistical models to help musicians tune their synthesizers and guitar effects. We operate by example: give the model a sound, and it will tell how to recreate it. See an overview of the project <a href="{{ site.baseurl }}{% post_url 2018-01-01-Secret-Sauce-data %}">here</a> and our first results <a href="{{ site.baseurl }}{% post_url 2018-01-13-Secret-Sauce-First-Results %}">here</a>.
+	{% endcapture description %}
+	{% include project.html
+		title="Secret Sauce"
+		image="/assets/images/moog_knobs.png"
 		description=description
 	%}
 

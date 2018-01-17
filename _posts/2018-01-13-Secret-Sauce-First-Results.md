@@ -9,7 +9,7 @@ This post presents early results for the Secret Sauce project. We show that it i
 
 ## Introduction
 
-The aim of the [Secret Sauce project](http://sellam.me/2018/01/01/Secret-Sauce-data.html) is to automatically reverse engineer sounds: give the model a sample, and it tells you how to reproduce it with a synthesizer or a set of guitar effects. How hard is this task?
+The aim of the [Secret Sauce project](http://sellam.me/2018/01/01/Secret-Sauce-data.html) is to automatically reverse engineer sounds: give the model a sample, and it tells you how to reproduce it with a synthesizer or a set of guitar effects. But how hard is the task?
 
 This post presents our first results, based on the Guitar Effect and Noisemaker datasets. Some results are positive, others are negative&mdash;the aim here is to give an idea of what we can achieve with a few days work and set a baseline for future research.
 

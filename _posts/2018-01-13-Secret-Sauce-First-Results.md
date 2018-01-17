@@ -1,5 +1,5 @@
 ---
-title: Secret Sauce, First Experiments
+title: Secret Sauce, First Results
 layout: post
 feature_image: "/assets/secret-sauce/effects_wide.jpg"
 ---
@@ -108,7 +108,7 @@ The next step is to tackle them with better feature. We will investigate two dir
 For all the datasets, we convert the samples to 22,050Hz and use windows of width 2048 with jumps of 512 frames. We use 20 MFCCs and 32 Mel bins.
 
 
-## Apendix 1: Detail of the Neural Networks
+## Apendix 2: Detail of the Neural Networks
 All the models have the same outputs: softmax layers with cross-entropy for the switches and fully connected layer with MSE loss for the knobs. We model the dependencies between the on/off switches of the effects and their parameters with multiplicative connections &mdash; for instance, in the guitar effect case, we multiply the predicted distortion rate with the binary variable that indicates whether the distortion is enabled or not.
 
 For the convolutional layer, we used a window of size 4 and stride 1. Each convolution layer is followed by 1D max pooling with window size 4 and stride 2. We set the number of filters at layer i to be #filters * i to create a VGG-like pyramidal structure.
@@ -120,7 +120,7 @@ We tried L2 regularization over the weights of all the models without success.
 Even more details in the [source code](https://github.com/tsellam/secret-sauce/tree/master/models).
 
 
-## Appendix 2: Topology of the Neural Networks
+## Appendix 3: Topology of the Neural Networks
 
 Representation | Algorithm | Parameter   | Guitar    |  Noisemaker |
 | ------------- |------------- | -----| :----:|:----:|
@@ -140,7 +140,7 @@ MFCC | Conv | #filters       |  48 |  64   |
 MFCC | Conv | #layers        |   2  |  2   |
 
 
-## Appendix 3: Detail of the MFCC+LSTM scores on the Noisemaker dataset
+## Appendix 4: Detail of the MFCC+LSTM scores on the Noisemaker dataset
 
 Not all predictions are bad for the Noisemaker dataset. Let us inspect the results for each task separately.
 

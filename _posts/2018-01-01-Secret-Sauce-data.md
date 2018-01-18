@@ -5,26 +5,32 @@ feature_image: "/assets/secret-sauce/Minimoog_panel.jpg"
 ---
 
 The aim of the Secret Sauce project is to automatically reverse engineer studio sounds, with a focus on guitar effects and synthesizers. Ultimately, we wish to answer the question <i><q>Wow, how did they make that sound?!</q></i>.
-This post presents the task, the datasets, and makes them available for whoever would like to try.
+This post presents the task and makes the datasets available for whoever would like to try.
 
 <!-- more -->
 
 ## The Goal
 
-Whether it's a <a href="https://www.youtube.com/watch?v=fWm3mm6CdIQ">light echo</a> on a rockabilly guitar, a <a href="https://www.youtube.com/watch?v=4w8pbGz7E8c">thick pad</a> on a prog rock record or a <a href="https://www.youtube.com/watch?v=meXPbvp3ldg">heavy sub</a> on a hip hop track, electronic effects and instruments have become a crucial aspect of modern music. And yet, as <a href="https://www.soundonsound.com/forum/viewforum.php?f=23">Web forums</a> testify, turning ideas into sounds is a difficult craft, which takes years to master.
+Whether it's a <a href="https://www.youtube.com/watch?v=fWm3mm6CdIQ">light echo</a> on a rockabilly guitar, a <a href="https://www.youtube.com/watch?v=4w8pbGz7E8c">thick pad</a> on a prog rock record or a <a href="https://www.youtube.com/watch?v=meXPbvp3ldg">heavy sub</a> on a hip hop track, electronic instruments and effects have become a crucial aspect of modern music.
 
-The aim of the Secret Sauce project is to make it easier to create sounds in the studio. Currently, tuning machines is a difficult process, which relies heavily on trial and error; my neighbors will probably never forgive me for the hours spent trying to sound like <a href="https://www.youtube.com/watch?v=UbkqE4fpvdI">the records that I enjoy</a>. Wouldn't it be great if musicians could simply provide an example of what they want, from a record or real life, and the machines would automatically "get it" and tune themselves?
+Yet, as many <a href="https://www.soundonsound.com/forum/viewforum.php?f=23">forums</a> and <a href="https://www.youtube.com/watch?v=atvtBE6t48M">YouTube videos</a> testify, turning ideas into sounds is a difficult craft, which takes years to master. Currently, the method of choice is trial and error, which is often slow and tedious &mdash; just ask my neighbors, who will probably never forgive me for the hours I spent trying to sound like <a href="https://www.youtube.com/watch?v=UbkqE4fpvdI">the records that I enjoy</a>. Wouldn't it be great if musicians could simply provide an example of what they want, from a record or real life, and the machines would automatically tune themselves?
 
-To this end, we are developing statistical models to reverse-engineer guitar and synthesizer sounds &mdash; give the model a reference sound, and it will tell you how to reproduce it.
+The aim of the Secret Sauce project is to do just that.  We are developing statistical models to reverse-engineer guitar and synthesizer sounds: **give the model a reference sound, and it will tell you how to reproduce it**.
 
-The first step is to collect data. Many sound banks exist, but little to none of them give the detail of how the sounds were produced. This post is our attempt to fill this gap. We are releasing three datasets, based on three instruments: a <a href="https://www.native-instruments.com/en/products/komplete/guitar/guitar-rig-5-player/download/">guitar with 5 effects</a>, a <a href="https://tal-software.com/products/tal-noisemaker">substractive synth plug-in</a> and a <a href="https://www.moogmusic.com/products/phattys/sub-phatty">Moog Sub Phatty</a>. For each instrument, we provide 10,000 sound samples based on the same note, as well as the settings that we used to produce them. The inference task is to guess the settings from the sounds.
+A major challenge is the lack of training data. While synthetic sounds are ubiquitous, producers rarely communicate the detail of how they created them (hence the name of the project). Furthermore, recorded music often mixes synthesizers and guitars with other instruments, which makes them <a href="https://en.wikipedia.org/wiki/Source_separation">very hard to process</a>. More convenient <a href="http://www.musicradar.com/news/tech/sampleradar-976-free-classic-synth-samples-225241">sound banks</a> do exist, but few, if any, are labeled.
+
+Our approach is to generate samples from scratch. Thanks to <a href="https://en.wikipedia.org/wiki/MIDI">MIDI</a>, many music devices can communicate with computers. Therefore, it is possible to generate and record thousands of random sounds automatically, at the cost of a bit of a engineering.
+
+We are releasing three collections of sounds built with this method. We recorded a <a href="https://www.native-instruments.com/en/products/komplete/guitar/guitar-rig-5-player/download/">guitar with 5 effects</a>, a <a href="https://tal-software.com/products/tal-noisemaker">subtractive synth plug-in</a> and a <a href="https://www.moogmusic.com/products/phattys/sub-phatty">Moog Sub Phatty</a>. For each instrument, we provide 10,000 sound samples, each based on the same note, as well as the settings that we used to produce them.
+
+We hope that those datasets will inspire researchers and musicians, and lead to exciting new results!
 
 
 
 
 ## Datasets
 
-For each dataset, we chose one note (C3), one instrument and one set of parameters. To generate the sounds, we assigned random values to the parameters, sent them through MIDI and recorded the note for a bit less than a second. The code to generate the tracks and clean the data is available on <a href="https://github.com/tsellam/secret-sauce/">Github</a>.
+For each dataset, we chose one note (C3), one instrument and one set of parameters. To generate the sounds, we assigned random values to the parameters, sent them through MIDI and recorded the note for a bit less than a second. The code to generate the tracks and clean the data is available on <a href="https://github.com/tsellam/secret-sauce/">Github</a>, it relies heavily on <a href="https://github.com/olemb/mido">mido</a>, a great MIDI library for Python.
 
 
 
@@ -35,17 +41,32 @@ The Guitar Effect dataset is based on a guitar simulator (<a href="https://www.a
 
 The dataset comes in two flavors. The <a href="https://drive.google.com/open?id=1QL4HLUNds6rm3T0XlWFWy3V_5DKy-yTy">tiny version</a> contains 32 sounds which correspond to every subset of effects (5 binary variables). The <a href="https://drive.google.com/file/d/1b-0anGE1csjUBiTLR1Ji6dOv53IswOQv/view?usp=sharing">full version</a> contains 10,000 samples; we varied both the effects (5 binary variables) and their settings (14 continuous variables).
 
+**Downloads** |
+---|
+ <a href="https://drive.google.com/open?id=1QL4HLUNds6rm3T0XlWFWy3V_5DKy-yTy">**Tiny version**</a>|
+ <a href="https://drive.google.com/file/d/1b-0anGE1csjUBiTLR1Ji6dOv53IswOQv">**Full version**</a>|
+
 
 ### TAL-NoiseMaker
 ![noisemaker](/assets/secret-sauce/noisemaker.png){: .blog-snippet} The Noisemaker dataset is based on TAL's <a href="https://tal-software.com/products/tal-noisemaker">free plugin</a>, which emulates a substractive synthesizer with two oscillators, a sub, two LFOs and separate envelopes for the filter and the amp.
 
 The <a href="https://drive.google.com/file/d/18Q6q9jKayFjwJ-gC84opHz1LSozHSeNi/view?usp=sharing">light version</a> contains 1,000 samples,for which we varied 1 switch and 4 knobs. The <a href="https://drive.google.com/open?id=1-QRmDChzf9MLsgOvUe4HemVqslPlH5ET">full version</a> contains 10,000 samples, we varied 3 switches and 13 knobs.
 
+**Downloads** |
+---|
+ <a href="https://drive.google.com/file/d/18Q6q9jKayFjwJ-gC84opHz1LSozHSeNi">**Light version**</a>|
+ <a href="https://drive.google.com/open?id=1-QRmDChzf9MLsgOvUe4HemVqslPlH5ET">**Full version**</a>|
+
+
 
 ### Moog Sub Phatty
 ![noisemaker](/assets/secret-sauce/moog-sub-phatty.jpg){: .blog-snippet} The dataset is based on a <a href="https://www.moogmusic.com/products/phattys/sub-phatty">Moog Sub Phatty</a>, an analog synth with two oscillators and a sub, and a very aggressive sound. In contrast to the Noisemaker dataset, we varied almost every possible parameter on the front panel, leading to extreme (and sometimes silent) sounds.
 
-The dataset contains 10,000 samples, obtained by tweaking 24 knobs and 5 switches. You may obtain it <a href="https://drive.google.com/file/d/1ZIcsoY0Cr8mUcBB8UqfjMRH1_weewUA0/view?usp=sharing">here</a>.
+The dataset contains 10,000 samples, obtained by tweaking 24 knobs and 5 switches.
+
+**Downloads** |
+---|
+ <a href="https://drive.google.com/file/d/1ZIcsoY0Cr8mUcBB8UqfjMRH1_weewUA0">**Full version**</a>|
 
 ### Details
 We sampled the parameter values uniformly over their entire domain (0-127 or 0-16383 based on MIDI specs) and rescale them to the range 0-10.
@@ -55,16 +76,20 @@ The samples last between 840ms and 900ms, they are mono encoded in 16 bits/22,05
 
 ## What's next?
 
-The first objective is to go through the tasks with standard ML techniques &mdash; I will present the first results in a separate blog post in the near future.
+For now, our objective is to go through the tasks with various machine learning techniques. We already obtained a few results, described in our <a href="{{ site.baseurl }}{% post_url 2018-01-13-Secret-Sauce-First-Results %}">follow-up blog post</a>. How close are we to a solution? The video below lets you judge by yourself. We play sounds #8000 to #8015 of the Noisemaker dataset twice. First, we use the original settings. Then, we use settings predicted by a recurrent neural net.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YLJU9CkSgTs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+Close, but not quite there! More info in the <a href="{{ site.baseurl }}{% post_url 2018-01-13-Secret-Sauce-First-Results %}">post</a>.
 
-The next step is to vary the melodic patterns. Currently, we always play the same note, which greatly simplifies the inference. But what happens when we start playing melodies and chords? I suspect that much bigger datasets will be needed to learn robust feature representations.
+The next step is to vary the melodic patterns. Currently, we always play the same note, which greatly simplifies the problem. But what happens when we start playing melodies and chords? I suspect that we will need bigger datasets to learn robust representations.
 
 Finally, in the long term, we can imagine reversing the process, and <i>infer sounds</i> from the settings in the spirit of <a href="https://magenta.tensorflow.org/nsynth">Nsynth</a>, or, perhaps, learn to imitate effects as a <a href="http://ieeexplore.ieee.org/abstract/document/7780634/">style transfer</a> task.
 
 
 
 ## References
-The Secret Sauce project is in the lineage of <a href="http://www.yeeking.net/matthew_yee-king_dphil_thesis_2011.pdf">Yee King's pioneering thesis</a> (2011), which showed that it was possible to program substractive and additive synthesizers with feed-forward nets and genetic algorithms to imitate sounds. We hope to reproduce those results, generalize them to other settings and try many other models. If you know of any other relevant reference, please reach out!
+The Secret Sauce project is in the lineage of <a href="http://www.yeeking.net/matthew_yee-king_dphil_thesis_2011.pdf">Yee King's pioneering thesis</a> (2011), which showed that it was possible to program substractive and additive synthesizers with feed-forward nets and genetic algorithms to imitate sounds. We hope to reproduce those results, generalize them to other settings and try many other models. Yee King's Website is <a href="http://www.yeeking.net/">here</a>, and his code <a href="https://github.com/yeeking/dx7-programmer">here</a>.
+
+If you know any other relevant reference, please <a href="mailto:thibault.sellam@gmail.com">reach out</a>!
 
 ### Acknowledgements
-Many thanks to Léo Sellam for the synthesizer, the recording, the advise and the food. I also thank <a href="https://bonvoyageorganisation.com/">Adrien Durand</a> for his insights.
+Many thanks to Léo Sellam for the synthesizer, the recording, the advise and the food. I also thank <a href="https://bonvoyageorganisation.com/">Adrien Durand</a> for his insights, as well as <a href="https://jaan.io/">Jaan Altosaar</a> and <a href="http://eugenewu.net/">Eugene Wu</a> for their feedback.

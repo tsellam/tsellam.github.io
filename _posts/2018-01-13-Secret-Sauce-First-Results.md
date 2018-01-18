@@ -91,7 +91,7 @@ You may find Jupyter notebooks for all the other datasets in our [Github reposit
 
 This blog post described our first set of experiments with the Guitar and Noisemaker datasets. The conclusions are mixed: we modeled the guitar effect dataset successfully, but found that the Noisemaker task harder to solve.
 
-The next step is to try better feature. First, we will try to combine the MFCCs with other features from the literature, such as deltas and constant-Q representations. Then, we will scale our experiment up and generate more data so that the algorithms can learn features themselves. To be continued!
+The next step is to try better features. First, we will try to combine the MFCCs with other features from the literature, such as deltas and constant-Q representations. Then, we will scale our experiment up and generate more data so that the algorithms can learn features themselves. To be continued!
 
 
 ## References

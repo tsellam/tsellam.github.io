@@ -3,7 +3,7 @@ title: Secret Sauce, First Results
 layout: post
 feature_image: "/assets/secret-sauce/effects_wide.jpg"
 ---
-This post presents early results for the Secret Sauce project. We show that it is possible to predict guitar effects accurately with high level audio features and recurrent neural nets, but predicting synthesizer patches is much more challenging.
+This post presents early results for the Secret Sauce project. We show that it is possible to predict guitar effects accurately with high level audio features and recurrent neural nets, but predicting synthesizer patches is more challenging.
 
 <!-- more -->
 
@@ -75,9 +75,12 @@ The LSTM + MFCCs approach outperforms all the others, closely followed by MLP. T
 We now present the scores for the Noisemaker dataset:
 {% include figure.html image="/assets/secret-sauce/results_noisemaker.jpg" position="center" caption="Prediction Accuracy for the Noisemaker Dataset" %}
 
-All the models struggle to make good predictions. They perform better than the naive baseline, but the results are not good enough to reconstitute the original sounds. As previously, it seems that classification is slightly less difficult than regression, and that joint models over MFCCs dominate the other approaches. But even this method is not accurate enough for practical use.
 
-To understand what went wrong, we investigated each target variable individually. We found that almost all models struggle with the parameters related to dynamics and long term properties of the sound (e.g., envelopes and LFOs), which calls for better features. Appendix 4 presents more details.
+We see that the models are better than the baseline, but are they accurate enough? After all, if a predictor fails to guess a parameter from the audio, then perhaps a human would do the same mistake and therefore the parameter would not matter in the first place. To verify, let us compare the first 15 samples of the test set to the LSTM's predictions:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YLJU9CkSgTs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+We hear that in most cases, the predictor captures the "spirit" of the sound, but it does not get the details right. Therefore, our conclusion are mixed: the models do help reverse-engineering the sounds, but the results are not perfect.
+
+As previously, it seems that classification is slightly less difficult than regression, and that joint models over MFCCs dominate the other approaches. To understand what the predictor got wrong, we investigated each target variable individually. We found that almost all models struggle with the parameters related to dynamics and long term properties of the sound (e.g., envelopes and LFOs), which calls for better features. Appendix 4 presents more details.
 
 ### Other Datasets
 
@@ -86,9 +89,9 @@ You may find Jupyter notebooks for all the other datasets in our [Github reposit
 
 ## Conclusion and Plan of Action
 
-This blog post described our first set of experiments with the Guitar and Noisemaker datasets. The conclusions are mixed: we modeled the guitar effect dataset successfully, but found that the Noisemaker task much harder to solve.
+This blog post described our first set of experiments with the Guitar and Noisemaker datasets. The conclusions are mixed: we modeled the guitar effect dataset successfully, but found that the Noisemaker task harder to solve.
 
-The next step is to tackle them with better feature. We will investigate two directions in the near future. First, we will try to combine the MFCCs with other features from the literature, such as deltas and constant-Q representations. Then, we will scale our experiment up and generate more data so that the algorithms can learn features themselves. To be continued!
+The next step is to try better feature. First, we will try to combine the MFCCs with other features from the literature, such as deltas and constant-Q representations. Then, we will scale our experiment up and generate more data so that the algorithms can learn features themselves. To be continued!
 
 
 ## References

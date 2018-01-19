@@ -62,7 +62,7 @@ The <a href="https://drive.google.com/file/d/18Q6q9jKayFjwJ-gC84opHz1LSozHSeNi/v
 
 The dataset contains 10,000 samples, obtained by tweaking 24 knobs and 5 switches.
 
-**Downloads** :<a href="https://drive.google.com/file/d/1ZIcsoY0Cr8mUcBB8UqfjMRH1_weewUA0">**Full version**</a>
+**Downloads**: <a href="https://drive.google.com/file/d/1ZIcsoY0Cr8mUcBB8UqfjMRH1_weewUA0">**Full version**</a>
 
 ### Details
 We sampled the parameter values uniformly over their entire domain (0-127 or 0-16383 based on MIDI specs) and rescale them to the range 0-10.

@@ -1,5 +1,5 @@
 ---
-title: The Secret Sauce Datasets
+title: Introducing the Secret Sauce datasets
 layout: post
 feature_image: "/assets/secret-sauce/Minimoog_panel.jpg"
 ---

@@ -1,5 +1,5 @@
 ---
-title: Secret Sauce, First Results
+title: First results for the Secret Sauce project
 layout: post
 feature_image: "/assets/secret-sauce/effects_wide.jpg"
 ---

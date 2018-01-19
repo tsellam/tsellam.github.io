@@ -9,7 +9,7 @@ This post presents early results for the Secret Sauce project. We show that it i
 
 ## Introduction
 
-The aim of the [Secret Sauce project](http://sellam.me/2018/01/01/Secret-Sauce-data.html) is to automatically reverse engineer sounds: give the model a sample, and it tells you how to reproduce it with a synthesizer or a set of guitar effects. But how hard is the task?
+The aim of the [Secret Sauce project](http://sellam.me/2018/01/01/Secret-Sauce-data.html) is to automatically reverse engineer sounds: give the model a sample, and it tells you how to approximate it with a synthesizer or a set of guitar effects. But how hard is the task?
 
 This post presents our first results, based on the Guitar Effect and Noisemaker datasets. Some results are positive, others are negative&mdash;the aim here is to give an idea of what we can achieve with a few days work and set a baseline for future research.
 
@@ -62,9 +62,9 @@ In what follows, we report two metrics: the **mean absolute error (MAE)** for re
 The figure below presents our results for the Guitar Effect dataset. The top line presents the classification scores (higher is better), the low line presents the regression scores (lower is better).
 {% include figure.html image="/assets/secret-sauce/results_guitar.jpg" position="center" caption="Prediction Accuracy for the Guitar Dataset" %}
 
-Let us examine the Naive strategy. The classification accuracy is close to 0.5 because all the categorical variables are binary and uniformly sampled. Similarly, the MAE is close to 2.5 because the knob values are sampled between 0 and 10 and the naive regressor always predicts the mean (5). Those numbers pass our sanity check.
+Let us examine the Naive strategy. The classification accuracy is close to 0.5 because all the categorical variables are binary and uniformly sampled. Similarly, the MAE is close to 2.5 because the knob values are sampled between 0 and 10 and the naive regressor always predicts the mean (5). Those numbers pass the sanity check.
 
-On the overall, the classification scores are excellent, indicating that our models can predict which effects are enabled with high accuracy. Predicting the continuous variables seems more difficult, as the algorithms are up to 2.09 ticks off the true values (out of 10). Fortunately, those inaccuracies have little to no impact on the final sound. To get a better intuition for their magnitude, let us listen to a few samples. In the following video, we play the first 15 notes from the test set, followed by the predictions of the LSTM (the best model we have). Can you hear the difference?
+On the overall, the classification scores are excellent, indicating that our models can predict which effects are enabled with high accuracy. Predicting the continuous variables seems more difficult, as the algorithms are up to 2.09 ticks off the true values (out of 10). Fortunately, those inaccuracies have only little impact on the final sound. To get a better intuition for their magnitude, let us listen to a few samples. In the following video, we play the first 15 notes from the test set, followed by the predictions of the LSTM (the best model we have). Can you hear the difference?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rRXWoyz2iDE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -76,7 +76,7 @@ We now present the scores for the Noisemaker dataset:
 {% include figure.html image="/assets/secret-sauce/results_noisemaker.jpg" position="center" caption="Prediction Accuracy for the Noisemaker Dataset" %}
 
 
-We see that the models are better than the baseline, but are they accurate enough? After all, if a predictor fails to guess a parameter from the audio, then perhaps a human would do the same mistake and therefore the parameter would not matter in the first place. To verify, let us compare the first 15 samples of the test set to the LSTM's predictions:
+We see that the models perform better than the baseline, but the overall metrics are rather weak. How much does this matter? After all, inaccuracies are acceptable if they are imperceptible to humans. To verify, we compare the first 15 samples of the test set to the LSTM's predictions:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YLJU9CkSgTs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 We hear that in most cases, the predictor captures the "spirit" of the sound, but it does not get the details right. Therefore, our conclusion are mixed: the models do help reverse-engineering the sounds, but the results are not perfect.
 
@@ -84,7 +84,7 @@ As previously, it seems that classification is slightly less difficult than regr
 
 ### Other Datasets
 
-You may find Jupyter notebooks for all the other datasets in our [Github repository](https://github.com/tsellam/secret-sauce/tree/master/models). In short, we obtain satisfying results with similar methods on the small datasets (Noisemaker light and Guitar Effects light), but the results for the Moog collection are even worse than those for Noisemaker.
+You may find Jupyter notebooks for all the other datasets in our [Github repository](https://github.com/tsellam/secret-sauce/tree/master/models). In short, we obtain satisfying results with similar methods on the small datasets (Noisemaker light and Guitar Effects light), but the results for the Moog collection are worse than those for Noisemaker.
 
 
 ## Conclusion and Plan of Action

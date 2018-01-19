@@ -17,13 +17,11 @@ Yet, as many <a href="https://www.soundonsound.com/forum/viewforum.php?f=23">for
 
 The aim of the Secret Sauce project is to do just that.  We are developing statistical models to reverse-engineer guitar and synthesizer sounds: **give the model a reference sound, and it will tell you how to reproduce it**.
 
-A major challenge is the lack of training data. While synthetic sounds are ubiquitous, producers rarely communicate the detail of how they created them (hence the name of the project). Furthermore, recorded music often mixes synthesizers and guitars with other instruments, which makes them <a href="https://en.wikipedia.org/wiki/Source_separation">very hard to process</a>. More convenient <a href="http://www.musicradar.com/news/tech/sampleradar-976-free-classic-synth-samples-225241">sound banks</a> do exist, but few, if any, are labeled.
+A major obstacle is the lack of training data. Music producers rarely give away their presets, which explains the name of our project. And even if they did, separating the sounds that interest us from the others is known to be a <a href="https://en.wikipedia.org/wiki/Source_separation">difficult task</a>. More convenient <a href="http://www.musicradar.com/news/tech/sampleradar-976-free-classic-synth-samples-225241">sample banks</a> do exist, but few, if any, are labeled.
 
-Our approach is to generate samples from scratch. Thanks to <a href="https://en.wikipedia.org/wiki/MIDI">MIDI</a>, many music devices can communicate with computers. Therefore, it is possible to generate and record thousands of random sounds automatically, at the cost of a bit of a engineering.
+Our approach is to generate samples from scratch. Thanks to <a href="https://en.wikipedia.org/wiki/MIDI">MIDI</a>, many music devices can communicate with computers. Therefore, it is possible to generate and record thousands of random sounds automatically, though this comes at the cost of a bit of a engineering.
 
-We are releasing three collections of sounds built with this method. We recorded a <a href="https://www.native-instruments.com/en/products/komplete/guitar/guitar-rig-5-player/download/">guitar with 5 effects</a>, a <a href="https://tal-software.com/products/tal-noisemaker">subtractive synth plug-in</a> and a <a href="https://www.moogmusic.com/products/phattys/sub-phatty">Moog Sub Phatty</a>. For each instrument, we provide 10,000 sound samples, each based on the same note, as well as the settings that we used to produce them.
-
-We hope that those datasets will inspire researchers and musicians, and lead to exciting new results!
+We are releasing five collections of sounds created with this method. We recorded a (simulated) <a href="https://www.native-instruments.com/en/products/komplete/guitar/guitar-rig-5-player/download/">guitar with 5 effects</a>, a <a href="https://tal-software.com/products/tal-noisemaker">subtractive synth plug-in</a> and a <a href="https://www.moogmusic.com/products/phattys/sub-phatty">Moog Sub Phatty</a>. For each instrument, we provide up to 10,000 sound samples, each based on the same note, as well as the settings that we used to produce them. We hope that those datasets will inspire researchers and musicians as much they inspired us!
 
 
 
@@ -92,4 +90,4 @@ The Secret Sauce project is in the lineage of <a href="http://www.yeeking.net/ma
 If you know any other relevant reference, please <a href="mailto:thibault.sellam@gmail.com">reach out</a>!
 
 ### Acknowledgements
-Many thanks to Léo Sellam for the synthesizer, the recording, the advise and the food. I also thank <a href="https://bonvoyageorganisation.com/">Adrien Durand</a> for his insights, as well as <a href="https://jaan.io/">Jaan Altosaar</a> and <a href="http://eugenewu.net/">Eugene Wu</a> for their feedback.
+Many thanks to Léo Sellam for the synthesizer, the recording, the advise and the food. I also thank <a href="https://bonvoyageorganisation.com/">Adrien Durand</a> for his insights, <a href="https://jaan.io/">Jaan Altosaar</a> and <a href="http://eugenewu.net/">Eugene Wu</a> for their feedback and the <a href="https://cudbg.github.io/lab/">WuLab</a> for the support.

@@ -76,7 +76,7 @@ We now present the scores for the Noisemaker dataset:
 {% include figure.html image="/assets/secret-sauce/results_noisemaker.jpg" position="center" caption="Prediction Accuracy for the Noisemaker Dataset" %}
 
 
-We see that the models perform better than the baseline, but the overall metrics are rather weak. How much does this matter? After all, inaccuracies are acceptable if they are imperceptible to humans. To verify, we compare the first 15 samples of the test set to the LSTM's predictions:
+We see that the models perform better than the baseline, but the metrics are rather weak on the overall. How much does this matter? After all, inaccuracies are acceptable if they are imperceptible to humans. To verify, we compare the first 15 samples of the test set to the LSTM's predictions:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YLJU9CkSgTs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 We hear that in most cases, the predictor captures the "spirit" of the sound, but it does not get the details right. Therefore, our conclusion are mixed: the models do help reverse-engineering the sounds, but the results are not perfect.
 

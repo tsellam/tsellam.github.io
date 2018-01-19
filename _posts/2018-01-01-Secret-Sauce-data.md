@@ -43,10 +43,9 @@ The Guitar Effect dataset is based on a guitar simulator (<a href="https://www.a
 
 The dataset comes in two flavors. The <a href="https://drive.google.com/open?id=1QL4HLUNds6rm3T0XlWFWy3V_5DKy-yTy">tiny version</a> contains 32 sounds which correspond to every subset of effects (5 binary variables). The <a href="https://drive.google.com/file/d/1b-0anGE1csjUBiTLR1Ji6dOv53IswOQv/view?usp=sharing">full version</a> contains 10,000 samples; we varied both the effects (5 binary variables) and their settings (14 continuous variables).
 
-**Downloads** |
----|
- <a href="https://drive.google.com/open?id=1QL4HLUNds6rm3T0XlWFWy3V_5DKy-yTy">**Tiny version**</a>|
- <a href="https://drive.google.com/file/d/1b-0anGE1csjUBiTLR1Ji6dOv53IswOQv">**Full version**</a>|
+**Downloads**:
+ <a href="https://drive.google.com/open?id=1QL4HLUNds6rm3T0XlWFWy3V_5DKy-yTy">**Tiny version**</a> -
+ <a href="https://drive.google.com/file/d/1b-0anGE1csjUBiTLR1Ji6dOv53IswOQv">**Full version**</a>
 
 
 ### TAL-NoiseMaker
@@ -54,10 +53,7 @@ The dataset comes in two flavors. The <a href="https://drive.google.com/open?id=
 
 The <a href="https://drive.google.com/file/d/18Q6q9jKayFjwJ-gC84opHz1LSozHSeNi/view?usp=sharing">light version</a> contains 1,000 samples,for which we varied 1 switch and 4 knobs. The <a href="https://drive.google.com/open?id=1-QRmDChzf9MLsgOvUe4HemVqslPlH5ET">full version</a> contains 10,000 samples, we varied 3 switches and 13 knobs.
 
-**Downloads** |
----|
- <a href="https://drive.google.com/file/d/18Q6q9jKayFjwJ-gC84opHz1LSozHSeNi">**Light version**</a>|
- <a href="https://drive.google.com/open?id=1-QRmDChzf9MLsgOvUe4HemVqslPlH5ET">**Full version**</a>|
+**Downloads** : <a href="https://drive.google.com/file/d/18Q6q9jKayFjwJ-gC84opHz1LSozHSeNi">**Light version**</a> - <a href="https://drive.google.com/open?id=1-QRmDChzf9MLsgOvUe4HemVqslPlH5ET">**Full version**</a>
 
 
 
@@ -66,9 +62,7 @@ The <a href="https://drive.google.com/file/d/18Q6q9jKayFjwJ-gC84opHz1LSozHSeNi/v
 
 The dataset contains 10,000 samples, obtained by tweaking 24 knobs and 5 switches.
 
-**Downloads** |
----|
- <a href="https://drive.google.com/file/d/1ZIcsoY0Cr8mUcBB8UqfjMRH1_weewUA0">**Full version**</a>|
+**Downloads** :<a href="https://drive.google.com/file/d/1ZIcsoY0Cr8mUcBB8UqfjMRH1_weewUA0">**Full version**</a>
 
 ### Details
 We sampled the parameter values uniformly over their entire domain (0-127 or 0-16383 based on MIDI specs) and rescale them to the range 0-10.

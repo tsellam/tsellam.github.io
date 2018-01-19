@@ -9,6 +9,10 @@ This post presents the task and makes the datasets available for whoever would l
 
 <!-- more -->
 
+
+*Note: for early results, see our follow-up post <a href="{{ site.baseurl }}{% post_url 2018-01-13-Secret-Sauce-First-Results %}">here</a>!*
+
+
 ## The Goal
 
 Whether it's a <a href="https://www.youtube.com/watch?v=fWm3mm6CdIQ">light echo</a> on a rockabilly guitar, a <a href="https://www.youtube.com/watch?v=4w8pbGz7E8c">thick pad</a> on a prog rock record or a <a href="https://www.youtube.com/watch?v=meXPbvp3ldg">heavy sub</a> on a hip hop track, electronic instruments and effects have become a crucial aspect of modern music.

@@ -5,6 +5,9 @@
 		<!-- General meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		  <!-- Social stuff -->
+		  {% include social-stuff.html %}
+
 		{% include google-analytics.html %}
 
 		{% if page.indexing == false %}
@@ -22,14 +25,13 @@
 		{% else %}
 			{% seo %}
 		{% endif %}
-	  <!-- Social stuff -->
-	  {% include social-suff.html %}
 
 
     <link rel="stylesheet" href="{{ "/assets/styles.css" | relative_url }}">
     <link rel="icon" type="image/png" href="/assets/icon.png">
 
 	</head>
+
 	<body class="layout-{{ page.layout }}{% if page.title %}  {{ page.title | slugify }}{% endif %}">
 		{% include site-icons.svg %}
 

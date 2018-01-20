@@ -1,5 +1,5 @@
 ---
-title: Introducing the Secret Sauce datasets
+title: Automatic sound programming &colon; datasets
 layout: post
 feature_image: "/assets/secret-sauce/Minimoog_panel.jpg"
 ---

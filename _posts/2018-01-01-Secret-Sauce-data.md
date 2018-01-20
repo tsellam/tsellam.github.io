@@ -2,6 +2,7 @@
 title: Automatic sound programming &colon; datasets
 layout: post
 feature_image: "/assets/secret-sauce/Minimoog_panel.jpg"
+twitter_image: "/assets/secret-sauce/Minimoog_panel.jpg"
 ---
 
 The aim of the Secret Sauce project is to automatically reverse engineer studio sounds, with a focus on guitar effects and synthesizers. Ultimately, we wish to answer the question <i><q>Wow, how did they make that sound?!</q></i>.

@@ -2,7 +2,7 @@
 title: Automatic sound programming &colon; first results
 layout: post
 feature_image: "/assets/secret-sauce/effects_wide.jpg"
-twitter_image: "/assets/secret-sauce/effects_wide.jpg"
+twitter_image: "/assets/secret-sauce/Minimoog_panel.jpg"
 ---
 
 This post presents early results for the Secret Sauce project. We show that it is possible to predict guitar effects accurately with high level audio features and recurrent neural nets, but predicting synthesizer patches is more challenging.

@@ -1,5 +1,5 @@
 ---
-title: Automatic sound programming &colon; first results
+title: Automatic sound programming&colon; first results
 layout: post
 feature_image: "/assets/secret-sauce/effects_wide.jpg"
 twitter_image: "/assets/secret-sauce/Minimoog_panel.jpg"

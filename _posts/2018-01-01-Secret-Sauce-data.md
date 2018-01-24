@@ -1,5 +1,5 @@
 ---
-title: Automatic sound programming &colon; datasets
+title: Automatic sound programming&colon; datasets
 layout: post
 feature_image: "/assets/secret-sauce/Minimoog_panel.jpg"
 twitter_image: "/assets/secret-sauce/Minimoog_panel.jpg"

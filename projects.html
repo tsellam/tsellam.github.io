@@ -6,10 +6,15 @@ permalink: /projects/
 
 <main>
 
-	<h2>Ongoing Projects</h2>
+	<h2>Current Projects</h2>
+
+	I recently started as an engineer at Google Research in NYC. I work on <a href="https://ai.google/research/teams/language/">language</a> and I am particulary interested in language understanding and generation. I will update this page when I have exciting news to share.
+
+
+	<h2>Past Projects</h2>
 
 	{% capture description %}
-		We are building tools to help engineers understand and debug neural networks, with a focus on recurrent models (e.g., RNNs, LSTMs). See our <a href="/assets/papers/sellam-sysML.pdf">SysML paper</a> for an overview. This is a collaboration with Kevin Lin, Ian Huang, Eugene Wu (Columbia) and Carl Vondrick (Google Research).
+		The aim of this project was to build tools to help engineers understand and debug neural networks with statistical methods. See our <a href="/assets/papers/sellam-sysML.pdf">SysML paper</a> for an overview and <a href="https://arxiv.org/abs/1904.02344">our SIGMOD paper</a> for the details. This was a collaboration with Kevin Lin, Ian Huang, Eugene Wu (Columbia) and Carl Vondrick (Google Research).
 	{% endcapture description %}
 	{% include project.html
 		title="Neural Debugging"
@@ -17,19 +22,10 @@ permalink: /projects/
 		description=description
 	%}
 
-	{% capture description %}
-		We are building statistical models to help musicians tune their synthesizers and guitar effects. We operate by example: give the model a sound, and it will tell how to recreate it. See an overview of the project <a href="{{ site.baseurl }}{% post_url 2018-01-01-Secret-Sauce-data %}">here</a> and our first results <a href="{{ site.baseurl }}{% post_url 2018-01-13-Secret-Sauce-First-Results %}">here</a>.
-	{% endcapture description %}
-	{% include project.html
-		title="Secret Sauce"
-		image="/assets/images/moog_knobs.png"
-		description=description
-	%}
-
 
 	{% capture description %}
-		We are building a system to generate user interfaces automatically by mining SQL query logs and navigational data.
-    	This is a collaboration with Haoci Zhang (Tsinghua) and Eugene Wu (Columbia). See our <a href="https://arxiv.org/abs/1712.00078">VLDB submission</a> for an overview.
+		We built a system to generate user interfaces automatically by mining SQL query logs and navigational data.
+    	This was a collaboration with Qianrui Zhang (Columbia), Haoci Zhang (Tsinghua) and Eugene Wu (Columbia). See our <a href="https://arxiv.org/abs/1904.02344">SIGMOD paper</a> for an overview.
 	{% endcapture description %}
 	{% include project.html
 		title="Precision Interfaces"
@@ -37,15 +33,20 @@ permalink: /projects/
 		description=description
 	%}
 
-
-
-	<h2>Past Projects</h2>
+	{% capture description %}
+		We built statistical models to help musicians tune their synthesizers and guitar effects. We operated by example: give the model a sound, and it will tell how to recreate it. See an overview of the project <a href="{{ site.baseurl }}{% post_url 2018-01-01-Secret-Sauce-data %}">here</a> and our first results <a href="{{ site.baseurl }}{% post_url 2018-01-13-Secret-Sauce-First-Results %}">here</a>. The project is still ongoing.
+	{% endcapture description %}
+	{% include project.html
+		title="Secret Sauce"
+		image="/assets/images/moog_knobs.png"
+		description=description
+	%}
 
     {% capture description %}
     	The aim of my PhD was to develop <b>automatic advisors</b>, to help users explore and understand their databases.  These advisors could detect statistical patterns, and exploit them to recommend queries and visualizations. For instance, <a href='https://dl.acm.org/citation.cfm?id=2806538'>Claude [CIKM 2015]</a> uses feature selection and information theory to   recommend views. <a href="http://cidrdb.org/cidr2013/Papers/CIDR13_Paper94.pdf">Charles [CIDR 2015]</a>, then its successor <a href="http://ieeexplore.ieee.org/abstract/document/7374727/">Blaeu [TKDE 2015]</a> exploit cluster analysis and subspace search. Also, instead of well- structured databases, users may have to deal with text files, or even worse, tweets. <a href="https://link.springer.com/chapter/10.1007/978-3-319-19890-3_17">Raimond [ICWE 2015]</a> extracts and organizes quantitative data from social data.
 	{% endcapture description %}
 	{% include project.html
-		title="Automatic Advisors for Data Exploration"
+		title="My PhD project: Automatic Advisors for Data Exploration"
 		image="/assets/images/cover_small.jpg"
 		large_img="True"
 		description=description

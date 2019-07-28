@@ -25,12 +25,22 @@ remote_theme: daviddarnes/alembic
 #theme: alembic-jekyll-theme
 
 # 8. Site navigation
+# Home: /
+# Projects: /projects/
+# Publications: /publications/
+# Blog: /blog/
+# Other: /other/
 navigation_header:
-  Home: /
-  Projects: /projects/
-  Publications: /publications/
-  Blog: /blog/
-  Other: /other/
+- title: Home
+  url: /
+- title: Projects
+  url: /projects/
+- title: Publications
+  url: /publications/
+- title: Blog
+  url: /blog/
+- title: Other
+  url: /other/
 
 navigation_footer:
   Thibault Sellam

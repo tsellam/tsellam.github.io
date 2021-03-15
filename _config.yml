@@ -45,3 +45,5 @@ navigation_header:
 navigation_footer:
   Thibault Sellam
 
+exclude:
+  - .jekyll-cache

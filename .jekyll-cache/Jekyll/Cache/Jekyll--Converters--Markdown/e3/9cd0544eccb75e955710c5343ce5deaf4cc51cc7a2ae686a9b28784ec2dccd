@@ -1,0 +1,93 @@
+I"r<main>
+
+	<h2>Current Projects</h2>
+
+	We are developing BLEURT, a flexible metric to evaluate Natural Language Generation systems.
+	See <a href="https://ai.googleblog.com/2020/05/evaluating-natural-language-generation.html">this blog post</a> for more information, or our <a href="https://github.com/google-research/bleurt">Github repo</a> if you would like to give it a try.
+
+
+	<h2>Past Projects</h2>
+
+	{% capture description %}
+		The aim of this project was to build tools to help engineers understand and debug neural networks with statistical methods. See our <a href="/assets/papers/sellam-sysML.pdf">SysML paper</a> for an overview and <a href="https://arxiv.org/abs/1904.02344">our SIGMOD paper</a> for the details. This was a collaboration with Kevin Lin, Ian Huang, Eugene Wu (Columbia) and Carl Vondrick (Google Research).
+	{% endcapture description %}
+	{% include project.html
+		title="Neural Debugging"
+		image="/assets/images/DNN_debug.png"
+		description=description
+	%}
+
+
+	{% capture description %}
+		We built a system to generate user interfaces automatically by mining SQL query logs and navigational data.
+    	This was a collaboration with Qianrui Zhang (Columbia), Haoci Zhang (Tsinghua) and Eugene Wu (Columbia). See our <a href="https://arxiv.org/abs/1904.02344">SIGMOD paper</a> for an overview.
+	{% endcapture description %}
+	{% include project.html
+		title="Precision Interfaces"
+		image="/assets/images/PI_UI.png"
+		description=description
+	%}
+
+	{% capture description %}
+		We built statistical models to help musicians tune their synthesizers and guitar effects. We operated by example: give the model a sound, and it will tell how to recreate it. See an overview of the project <a href="{{ site.baseurl }}{% post_url 2018-01-01-Secret-Sauce-data %}">here</a> and our first results <a href="{{ site.baseurl }}{% post_url 2018-01-13-Secret-Sauce-First-Results %}">here</a>. The project is still ongoing.
+	{% endcapture description %}
+	{% include project.html
+		title="Secret Sauce"
+		image="/assets/images/moog_knobs.png"
+		description=description
+	%}
+
+    {% capture description %}
+    	The aim of my PhD was to develop <b>automatic advisors</b>, to help users explore and understand their databases. These advisors could detect statistical patterns, and exploit them to recommend queries and visualizations. For instance, Blaeu <a href="https://ieeexplore.ieee.org/document/7374727">[TKDE 2015]</a> would use cluster analysis and subspace search to create navigable maps of the data.
+	{% endcapture description %}
+	{% include project.html
+		title="My PhD project: Automatic Advisors for Data Exploration"
+		image="/assets/images/cover_small.jpg"
+		large_img="True"
+		description=description
+	%}
+	<div>
+		 <p style="float: left; margin-right:1em;"> <img src="/assets/images/Rlogo.png" width="70" /> </p>
+		 <p>
+		 	 Some of the the ideas in the thesis were implemented in a <b>R package</b> called <a href="http://github.com/tsellam/findviews">findviews</a>, available on CRAN. Check it out!
+ 		</p>
+	</div>
+
+
+	{% capture description %}
+		The aim of this project was to model search query logs and Twitter data to detect <b>experts</b> on social media. This project has been ongoing since my internship at Microsoft Research,
+        during summer of 2014 in Mountain View (CA). Then, I was under
+        supervised by Omar Alonso, at Bing.
+	{% endcapture description %}
+	{% include project.html
+		title="Social Data Analytics"
+		image="/assets/images/ProjectSocial.png"
+		description=description
+	%}
+
+
+	{% capture description %}
+		The aim of this project was to develop database and forecasting technology to analyze large
+            repositories of GPS data. This project was collaboration with <a href="https://www.tomtom.com/">TomTom</a>.
+	{% endcapture description %}
+	{% include project.html
+		title="Timetrails - Traffic Data Analysis"
+		image="/assets/images/ProjectGPS.png"
+		description=description
+	%}
+
+
+
+	{% capture description %}
+		<a href="http://monetdb.org/">MonetDB</a> is a very fast Open Source column-store.
+	{% endcapture description %}
+	{% include project.html
+		title="MonetDB"
+		image="/assets/images/ProjectMonet.png"
+		description=description
+	%}
+
+
+</main>
+
+:ET

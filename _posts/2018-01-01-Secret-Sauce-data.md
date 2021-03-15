@@ -88,5 +88,9 @@ The Secret Sauce project is in the lineage of <a href="http://www.yeeking.net/ma
 
 If you know any other relevant reference, please <a href="mailto:thibault.sellam@gmail.com">reach out</a>!
 
+## License
+
+Secret Sauce <a href="https://drive.google.com/file/d/1b-0anGE1csjUBiTLR1Ji6dOv53IswOQv">guitar</a>, <a href="https://drive.google.com/file/d/1ZIcsoY0Cr8mUcBB8UqfjMRH1_weewUA0">virtual synth</a> and <a href="https://drive.google.com/file/d/1ZIcsoY0Cr8mUcBB8UqfjMRH1_weewUA0">physical synth</a> datasets by Thibault Sellam,  <a href=" https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+
 ### Acknowledgements
 Many thanks to Léo Sellam for the synthesizer, the recording, the advise and the food. I also thank <a href="https://bonvoyageorganisation.com/">Adrien Durand</a> for his insights, <a href="https://jaan.io/">Jaan Altosaar</a> and <a href="http://eugenewu.net/">Eugene Wu</a> for their feedback and the <a href="https://cudbg.github.io/lab/">WuLab</a> for the support.

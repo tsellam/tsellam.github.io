@@ -26,17 +26,17 @@ plugins:
 
 # 8. Site navigation
 # Home: /
-# Projects: /projects/
 # Publications: /publications/
+# Projects: /projects/
 # Blog: /blog/
 # Other: /other/
 navigation_header:
 - title: Home
   url: /
-- title: Projects
-  url: /projects/
 - title: Publications
   url: /publications/
+- title: Projects
+  url: /projects/
 - title: Blog
   url: /blog/
 - title: Other

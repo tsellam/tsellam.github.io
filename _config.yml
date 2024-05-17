@@ -39,8 +39,6 @@ navigation_header:
   url: /projects/
 - title: Blog
   url: /blog/
-- title: Other
-  url: /other/
 
 navigation_footer:
   Thibault Sellam
